@@ -1,0 +1,23 @@
+body{
+    margin:0;
+    background:#0b1220;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+a{
+    text-decoration:none;
+    color:white;
+}
+
+.kart{
+    background:#16213e;
+    margin:15px;
+    padding:20px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.kart:hover{
+    background:#1f2d55;
+}
