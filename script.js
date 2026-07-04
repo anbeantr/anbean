@@ -1,6 +1,13 @@
-console.log("ANBEAN hazır!");
+// ANBEAN v2
 
-document.getElementById("gold-price").innerText="4.352 ₺";
-document.getElementById("usd-price").innerText="41.12 ₺";
-document.getElementById("eur-price").innerText="48.25 ₺";
-document.getElementById("weather").innerText="☀️ 31°C";
+document.addEventListener("DOMContentLoaded", () => {
+
+document.getElementById("gold-price").innerHTML="₺4.352,18";
+
+document.getElementById("usd-price").innerHTML="₺40,56";
+
+document.getElementById("eur-price").innerHTML="₺47,82";
+
+document.getElementById("weather").innerHTML="☀️ 31°C";
+
+});
