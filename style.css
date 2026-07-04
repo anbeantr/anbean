@@ -119,3 +119,32 @@ color:white;
 padding:12px;
 font-weight:bold;
 }
+.live-data{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+padding:20px 30px;
+}
+
+.live-box{
+background:#1a2745;
+padding:20px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+transition:.3s;
+}
+
+.live-box:hover{
+transform:scale(1.05);
+}
+
+.live-box h3{
+margin:0 0 10px;
+}
+
+.live-box p{
+font-size:22px;
+font-weight:bold;
+color:#00d4ff;
+}
