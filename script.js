@@ -16,7 +16,21 @@ JSON.stringify(data.result);;
 
     const usd = data.result.find(item => item.code === "USD");
     const eur = data.result.find(item => item.code === "EUR");
-    const gold = data.result.find(item => item.code === "GA");
+    const goldResponse = await fetch("https://api.collectapi.com/economy/altinFiyatini", {
+  method: "GET",
+  headers: {
+    "content-type": "application/json",
+    "authorization": API_KEY
+  }
+});
+
+const goldData = await goldResponse.json();
+
+const gramAltin = goldData.result.find(item => item.name === "Gram Altın");
+
+if (gramAltin) {
+  document.getElementById("gold-price").innerHTML = gramAltin.buy + " ₺";
+}
 
     if (usd) {
       document.getElementById("usd-price").innerHTML = usd.buying + " ₺";
