@@ -1,62 +1,60 @@
-async function getUSD() {
+const API_URL = "https://api.genelpara.com/json/";
+
+async function loadData() {
     try {
-        const res = await fetch("https://api.frankfurter.app/latest?from=USD&to=TRY");
-        const data = await res.json();
+
+        // Döviz
+        const dovizRes = await fetch(API_URL + "?list=doviz&sembol=USD,EUR");
+        const doviz = await dovizRes.json();
+
         document.getElementById("usd-price").textContent =
-            data.rates.TRY.toFixed(2) + " ₺";
-    } catch {
-        document.getElementById("usd-price").textContent = "--";
-    }
-}
+            doviz.USD.satis + " ₺";
 
-async function getEUR() {
-    try {
-        const res = await fetch("https://api.frankfurter.app/latest?from=EUR&to=TRY");
-        const data = await res.json();
         document.getElementById("eur-price").textContent =
-            data.rates.TRY.toFixed(2) + " ₺";
-    } catch {
-        document.getElementById("eur-price").textContent = "--";
-    }
-}
+            doviz.EUR.satis + " ₺";
 
-async function getGold() {
-    try {
-        const res = await fetch("https://finans.truncgil.com/today.json");
-        const data = await res.json();
+        // Altın
+        const altinRes = await fetch(API_URL + "?list=altin&sembol=GA,C,Y,T");
+        const altin = await altinRes.json();
 
         document.getElementById("gold-price").textContent =
-            data["Gram Altın"] || "--";
+            altin.GA.satis + " ₺";
 
-    } catch {
-        document.getElementById("gold-price").textContent = "--";
-    }
+        document.getElementById("quarter-price").textContent =
+            altin.C.satis + " ₺";
 
-    document.getElementById("quarter-price").textContent = "Yakında";
-    document.getElementById("half-price").textContent = "Yakında";
-    document.getElementById("full-price").textContent = "Yakında";
-}
+        document.getElementById("half-price").textContent =
+            altin.Y.satis + " ₺";
 
-async function getWeather() {
-    try {
-        const res = await fetch("https://api.open-meteo.com/v1/forecast?latitude=38.42&longitude=27.14&current=temperature_2m");
-        const data = await res.json();
+        document.getElementById("full-price").textContent =
+            altin.T.satis + " ₺";
+
+        // Hava (şimdilik İzmir örneği)
+        const weatherRes = await fetch(
+            "https://api.open-meteo.com/v1/forecast?latitude=38.42&longitude=27.14&current=temperature_2m"
+        );
+        const weather = await weatherRes.json();
 
         document.getElementById("weather").textContent =
-            data.current.temperature_2m + "°C";
+            weather.current.temperature_2m + "°C";
 
-    } catch {
-        document.getElementById("weather").textContent = "--";
+    } catch (err) {
+        console.error(err);
+
+        [
+            "usd-price",
+            "eur-price",
+            "gold-price",
+            "quarter-price",
+            "half-price",
+            "full-price",
+            "weather"
+        ].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = "--";
+        });
     }
 }
 
-function loadAll() {
-    getUSD();
-    getEUR();
-    getGold();
-    getWeather();
-}
-
-loadAll();
-
-setInterval(loadAll,60000);
+loadData();
+setInterval(loadData, 60000);
