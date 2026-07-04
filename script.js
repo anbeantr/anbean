@@ -4,55 +4,57 @@ async function loadData() {
     try {
 
         // Döviz
-        const dovizRes = await fetch(API_URL + "?list=doviz&sembol=USD,EUR");
-        const dovizJson = await dovizRes.json();
-        const doviz = dovizJson.data;
+        const dovizResponse = await fetch(API_URL + "?list=doviz&sembol=USD,EUR");
+        const dovizJson = await dovizResponse.json();
 
-        document.getElementById("usd-price").textContent =
-            doviz.USD.satis + " ₺";
+        if (dovizJson.success && dovizJson.data) {
+            document.getElementById("usd-price").textContent =
+                dovizJson.data.USD.satis + " ₺";
 
-        document.getElementById("eur-price").textContent =
-            doviz.EUR.satis + " ₺";
-
+            document.getElementById("eur-price").textContent =
+                dovizJson.data.EUR.satis + " ₺";
+        }
 
         // Altın
-        const altinRes = await fetch(API_URL + "?list=altin&sembol=GA,C,Y,T");
-        const altinJson = await altinRes.json();
-        const altin = altinJson.data;
+        const altinResponse = await fetch(API_URL + "?list=altin&sembol=GA,C,Y,T");
+        const altinJson = await altinResponse.json();
 
-        document.getElementById("gold-price").textContent =
-            altin.GA.satis + " ₺";
+        if (altinJson.success && altinJson.data) {
+            document.getElementById("gold-price").textContent =
+                altinJson.data.GA.satis + " ₺";
 
-        document.getElementById("quarter-price").textContent =
-            altin.C.satis + " ₺";
+            document.getElementById("quarter-price").textContent =
+                altinJson.data.C.satis + " ₺";
 
-        document.getElementById("half-price").textContent =
-            altin.Y.satis + " ₺";
+            document.getElementById("half-price").textContent =
+                altinJson.data.Y.satis + " ₺";
 
-        document.getElementById("full-price").textContent =
-            altin.T.satis + " ₺";
+            document.getElementById("full-price").textContent =
+                altinJson.data.T.satis + " ₺";
+        }
 
-
-        // Hava
-        const weatherRes = await fetch(
+        // Hava Durumu (İzmir)
+        const weatherResponse = await fetch(
             "https://api.open-meteo.com/v1/forecast?latitude=38.42&longitude=27.14&current=temperature_2m"
         );
 
-        const weather = await weatherRes.json();
+        const weatherJson = await weatherResponse.json();
 
-        document.getElementById("weather").textContent =
-            weather.current.temperature_2m + "°C";
+        if (weatherJson.current) {
+            document.getElementById("weather").textContent =
+                weatherJson.current.temperature_2m + "°C";
+        }
 
     } catch (err) {
         console.error(err);
 
         [
-            "usd-price",
-            "eur-price",
             "gold-price",
             "quarter-price",
             "half-price",
             "full-price",
+            "usd-price",
+            "eur-price",
             "weather"
         ].forEach(id => {
             const el = document.getElementById(id);
