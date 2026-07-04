@@ -26,7 +26,10 @@ JSON.stringify(data.result);;
 
 const goldData = await goldResponse.json();
 
-const gramAltin = goldData.result.find(item => item.name === "Gram Altın");
+console.log(goldData.result);
+
+document.getElementById("gold-price").innerHTML =
+goldData.result[1].buy + " ₺";
 
 if (gramAltin) {
   document.getElementById("gold-price").innerHTML = gramAltin.buy + " ₺";
