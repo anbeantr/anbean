@@ -5,7 +5,8 @@ async function loadData() {
 
         // Döviz
         const dovizRes = await fetch(API_URL + "?list=doviz&sembol=USD,EUR");
-        const doviz = await dovizRes.json();
+        const dovizJson = await dovizRes.json();
+        const doviz = dovizJson.data;
 
         document.getElementById("usd-price").textContent =
             doviz.USD.satis + " ₺";
@@ -13,9 +14,11 @@ async function loadData() {
         document.getElementById("eur-price").textContent =
             doviz.EUR.satis + " ₺";
 
+
         // Altın
         const altinRes = await fetch(API_URL + "?list=altin&sembol=GA,C,Y,T");
-        const altin = await altinRes.json();
+        const altinJson = await altinRes.json();
+        const altin = altinJson.data;
 
         document.getElementById("gold-price").textContent =
             altin.GA.satis + " ₺";
@@ -29,10 +32,12 @@ async function loadData() {
         document.getElementById("full-price").textContent =
             altin.T.satis + " ₺";
 
-        // Hava (şimdilik İzmir örneği)
+
+        // Hava
         const weatherRes = await fetch(
             "https://api.open-meteo.com/v1/forecast?latitude=38.42&longitude=27.14&current=temperature_2m"
         );
+
         const weather = await weatherRes.json();
 
         document.getElementById("weather").textContent =
