@@ -1,55 +1,45 @@
-const API_KEY = "apikey BURAYA_YENI_API_KEY";
-
 async function getData() {
   try {
 
-    // Döviz Verileri
-    const response = await fetch("https://api.collectapi.com/economy/allCurrency", {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-        "authorization": API_KEY
-      }
-    });
+    // USD
+    const usd = await fetch("https://api.frankfurter.app/latest?from=USD&to=TRY")
+      .then(r => r.json());
 
-    if (!response.ok) throw new Error("CollectAPI Hatası");
+    document.getElementById("usd-price").textContent =
+      usd.rates.TRY.toFixed(2) + " ₺";
 
-    const data = await response.json();
+    // EUR
+    const eur = await fetch("https://api.frankfurter.app/latest?from=EUR&to=TRY")
+      .then(r => r.json());
 
-    const usd = data.result.find(item => item.code === "USD");
-    const eur = data.result.find(item => item.code === "EUR");
+    document.getElementById("eur-price").textContent =
+      eur.rates.TRY.toFixed(2) + " ₺";
 
-    if (usd) {
-      document.getElementById("usd-price").textContent =
-        Number(usd.buying).toFixed(2) + " ₺";
-    }
+    // Gram Altın
+    const gold = await fetch("https://finans.truncgil.com/today.json")
+      .then(r => r.json());
 
-    if (eur) {
-      document.getElementById("eur-price").textContent =
-        Number(eur.buying).toFixed(2) + " ₺";
-    }
+    const gram = gold["Gram Altın"];
 
-    // Finans Kartları (Geçici)
-    document.getElementById("gold-price").textContent = "Yakında";
+    document.getElementById("gold-price").textContent =
+      gram ? gram + " ₺" : "--";
+
+    // Şimdilik
     document.getElementById("quarter-price").textContent = "Yakında";
     document.getElementById("half-price").textContent = "Yakında";
     document.getElementById("full-price").textContent = "Yakında";
 
-    // Hava Durumu (Geçici)
-    document.getElementById("weather").textContent = "31°C ☀️";
+    // Hava
+    const weather = await fetch("https://api.open-meteo.com/v1/forecast?latitude=38.42&longitude=27.14&current=temperature_2m")
+      .then(r => r.json());
+
+    document.getElementById("weather").textContent =
+      weather.current.temperature_2m + "°C";
 
   } catch (e) {
-    console.error(e);
-
-    document.getElementById("usd-price").textContent = "--";
-    document.getElementById("eur-price").textContent = "--";
-    document.getElementById("gold-price").textContent = "--";
-    document.getElementById("quarter-price").textContent = "--";
-    document.getElementById("half-price").textContent = "--";
-    document.getElementById("full-price").textContent = "--";
-    document.getElementById("weather").textContent = "--";
+    console.log(e);
   }
 }
 
 getData();
-setInterval(getData, 60000);
+setInterval(getData,60000);
