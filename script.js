@@ -1,13 +1,33 @@
-// ANBEAN v2
+async function getRates() {
 
-document.addEventListener("DOMContentLoaded", () => {
+try {
 
-document.getElementById("gold-price").innerHTML="₺4.352,18";
+const res = await fetch("https://open.er-api.com/v6/latest/USD");
+const data = await res.json();
 
-document.getElementById("usd-price").innerHTML="₺40,56";
+const usd = data.rates.TRY;
+const eur = (data.rates.TRY / data.rates.EUR);
 
-document.getElementById("eur-price").innerHTML="₺47,82";
+document.getElementById("usd-price").innerHTML =
+"₺" + usd.toFixed(2);
 
-document.getElementById("weather").innerHTML="☀️ 31°C";
+document.getElementById("eur-price").innerHTML =
+"₺" + eur.toFixed(2);
 
-});
+// Şimdilik yaklaşık hesap
+document.getElementById("gold-price").innerHTML =
+"Canlı API";
+
+document.getElementById("weather").innerHTML =
+"Yakında";
+
+}
+catch(e){
+
+console.log(e);
+
+}
+
+}
+
+getRates();
