@@ -1,44 +1,46 @@
 const API_KEY = "apikey 5eu5WYbeEA9CCOQiR48HuX:5eqmsfI8BegutOmyRuG14j";
 
 async function getData() {
-    try {
-        const response = await fetch("https://api.collectapi.com/economy/allCurrency", {
-            method: "GET",
-            headers: {
-                "content-type": "application/json",
-                "authorization": API_KEY
-            }
-        });
+  try {
+    const response = await fetch("https://api.collectapi.com/economy/allCurrency", {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        "authorization": API_KEY
+      }
+    });
 
-        const data = await response.json();
+    const data = await response.json();
+    console.log(data);
 
-        console.log(data);
+    const usd = data.result.find(item => item.code === "USD");
+    const eur = data.result.find(item => item.code === "EUR");
+    const gold = data.result.find(item => item.code === "GA");
 
-        const usd = data.result.find(item => item.code === "USD");
-        const eur = data.result.find(item => item.code === "EUR");
-
-        if (usd) {
-            document.getElementById("usd-price").innerHTML = usd.buying + " ₺";
-        }
-
-        if (eur) {
-            document.getElementById("eur-price").innerHTML = eur.buying + " ₺";
-        }
-
-        // Şimdilik örnek değer
-        document.getElementById("gold-price").innerHTML = "API Bağlanacak";
-
-        // Şimdilik örnek hava
-        document.getElementById("weather").innerHTML = "31°C ☀️";
-
-    } catch (error) {
-        console.error(error);
-
-        document.getElementById("usd-price").innerHTML = "--";
-        document.getElementById("eur-price").innerHTML = "--";
-        document.getElementById("gold-price").innerHTML = "--";
-        document.getElementById("weather").innerHTML = "--";
+    if (usd) {
+      document.getElementById("usd-price").innerHTML = usd.buying + " ₺";
     }
+
+    if (eur) {
+      document.getElementById("eur-price").innerHTML = eur.buying + " ₺";
+    }
+
+    if (gold) {
+      document.getElementById("gold-price").innerHTML = gold.buying + " ₺";
+    } else {
+      document.getElementById("gold-price").innerHTML = "Bulunamadı";
+    }
+
+    document.getElementById("weather").innerHTML = "31°C ☀️";
+
+  } catch (error) {
+    console.error(error);
+
+    document.getElementById("usd-price").innerHTML = "--";
+    document.getElementById("eur-price").innerHTML = "--";
+    document.getElementById("gold-price").innerHTML = "--";
+    document.getElementById("weather").innerHTML = "--";
+  }
 }
 
 getData();
