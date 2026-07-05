@@ -1,109 +1,237 @@
+/* ====================================
+   ANBEAN V3 STYLE.CSS
+   BÖLÜM 1 / 3
+==================================== */
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:'Poppins',sans-serif;
 background:#0b1220;
 color:#fff;
-padding-bottom:80px;
+line-height:1.5;
+padding-bottom:90px;
 }
 
 /* HEADER */
 
 .topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:14px 18px;
-background:#101827;
 position:sticky;
 top:0;
 z-index:999;
-box-shadow:0 2px 10px rgba(0,0,0,.35);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 18px;
+background:#111827;
+box-shadow:0 3px 12px rgba(0,0,0,.35);
 }
 
 .menu-btn,
 .search-icon{
+
 font-size:28px;
 cursor:pointer;
+color:#fff;
+transition:.3s;
+
+}
+
+.menu-btn:hover,
+.search-icon:hover{
+
+color:#00c8ff;
+
 }
 
 .brand{
-text-align:center;
+
 flex:1;
+text-align:center;
+
 }
 
 .logo{
+
 font-size:34px;
-font-weight:800;
+font-weight:900;
 letter-spacing:2px;
-background:linear-gradient(90deg,#00c6ff,#ffffff,#00c6ff);
+
+background:linear-gradient(
+90deg,
+#00bfff,
+#48d7ff,
+#ffffff,
+#48d7ff,
+#00bfff
+);
+
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+
 }
 
 .slogan{
+
 font-size:12px;
-color:#bcbcbc;
-margin-top:3px;
+color:#c7c7c7;
+margin-top:2px;
+
 }
 
 /* KATEGORİLER */
 
 .categories{
+
 display:flex;
 overflow-x:auto;
 gap:10px;
+
 padding:14px;
-background:#131d33;
+
+background:#16213e;
+
 scrollbar-width:none;
+
 }
 
 .categories::-webkit-scrollbar{
+
 display:none;
+
 }
 
 .categories a{
+
 flex:0 0 auto;
-padding:10px 16px;
-background:#1c2946;
-border-radius:30px;
-text-decoration:none;
+
+padding:10px 18px;
+
+background:#20304f;
+
+border-radius:50px;
+
 color:#fff;
+
+text-decoration:none;
+
 font-size:14px;
-white-space:nowrap;
+
+font-weight:600;
+
+transition:.3s;
+
 }
 
-/* BAŞLIK */
+.categories a:hover{
+
+background:#00bfff;
+color:#000;
+
+}
+
+/* SON DAKİKA */
 
 .headline{
-padding:18px;
+
+padding:20px;
+
 }
 
 .headline h2{
-font-size:20px;
-margin-bottom:15px;
-color:#ff4444;
+
+font-size:22px;
+
+color:#ff5252;
+
+margin-bottom:20px;
+
 }
 
 .loading{
+
 padding:40px;
+
+background:#16213e;
+
+border-radius:18px;
+
 text-align:center;
-background:#16213e;
-border-radius:16px;
+
+color:#ddd;
+
+}display:none;
+
 }
 
-/* HABER */
+.categories a{
 
-.news-item{
-background:#16213e;
-border-radius:16px;
-padding:18px;
-margin-bottom:15px;
+flex:0 0 auto;
+
+padding:10px 18px;
+
+background:#20304f;
+
+border-radius:50px;
+
+color:#fff;
+
+text-decoration:none;
+
+font-size:14px;
+
+font-weight:600;
+
+transition:.3s;
+
 }
+
+.categories a:hover{
+
+background:#00bfff;
+color:#000;
+
+}
+
+/* SON DAKİKA */
+
+.headline{
+
+padding:20px;
+
+}
+
+.headline h2{
+
+font-size:22px;
+
+color:#ff5252;
+
+margin-bottom:20px;
+
+}
+
+.loading{
+
+padding:40px;
+
+background:#16213e;
+
+border-radius:18px;
+
+text-align:center;
+
+color:#ddd;
+
+}}
 
 .news-item img{
 width:100%;
@@ -587,3 +715,286 @@ box-shadow:0 0 30px rgba(0,191,255,.45);
     }
 
 }
+/* ====================================
+   ANBEAN V3 STYLE.CSS
+   BÖLÜM 2 / 3
+==================================== */
+
+/* HABERLER */
+
+#news-list{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.news-item{
+background:#16213e;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.35);
+transition:.3s;
+}
+
+.news-item:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(0,191,255,.25);
+}
+
+.news-image{
+width:100%;
+height:220px;
+object-fit:cover;
+display:block;
+}
+
+.news-item h3{
+padding:18px 18px 10px;
+font-size:21px;
+line-height:1.5;
+}
+
+.news-item p{
+padding:0 18px;
+color:#d4d4d4;
+font-size:15px;
+line-height:1.7;
+}
+
+.news-button{
+display:inline-block;
+margin:18px;
+padding:12px 20px;
+background:#00bfff;
+border-radius:10px;
+color:#fff;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.news-button:hover{
+background:#008fd1;
+}
+
+/* PİYASA */
+
+.market-title{
+padding:25px 20px 15px;
+}
+
+.market-title h2{
+font-size:24px;
+}
+
+.live-data{
+display:flex;
+overflow-x:auto;
+gap:16px;
+padding:0 20px 20px;
+scrollbar-width:none;
+}
+
+.live-data::-webkit-scrollbar{
+display:none;
+}
+
+.live-box{
+min-width:180px;
+background:#16213e;
+border-radius:18px;
+padding:20px;
+text-align:center;
+box-shadow:0 8px 25px rgba(0,0,0,.35);
+transition:.3s;
+}
+
+.live-box:hover{
+transform:translateY(-6px);
+}
+
+.live-box h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.live-box p{
+font-size:28px;
+font-weight:700;
+color:#19b5fe;
+}
+
+.gold{
+border-top:4px solid gold;
+}
+
+.usd{
+border-top:4px solid #00c853;
+}
+
+.eur{
+border-top:4px solid #2196f3;
+}
+
+.weather{
+border-top:4px solid orange;
+}
+
+/* SERVİSLER */
+
+.services{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+padding:20px;
+}
+
+.card{
+background:#16213e;
+border-radius:18px;
+padding:22px;
+text-align:center;
+font-size:18px;
+font-weight:600;
+transition:.3s;
+cursor:pointer;
+}
+
+.card:hover{
+background:#1e3357;
+transform:translateY(-5px);
+   }
+/* ====================================
+   ANBEAN V3 STYLE.CSS
+   BÖLÜM 3 / 3
+==================================== */
+
+/* ALT MENÜ */
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+height:70px;
+background:#101827;
+display:flex;
+justify-content:space-around;
+align-items:center;
+border-top:1px solid rgba(255,255,255,.08);
+box-shadow:0 -5px 20px rgba(0,0,0,.35);
+z-index:999;
+}
+
+.bottom-nav a{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+color:#d8d8d8;
+font-size:22px;
+transition:.3s;
+}
+
+.bottom-nav a span{
+font-size:11px;
+margin-top:4px;
+}
+
+.bottom-nav a:hover{
+color:#00bfff;
+}
+
+/* ANİMASYON */
+
+.live-box,
+.card,
+.news-item{
+transition:all .30s ease;
+}
+
+.live-box:hover{
+box-shadow:0 0 25px rgba(0,191,255,.25);
+}
+
+.card:hover{
+box-shadow:0 0 25px rgba(0,191,255,.25);
+}
+
+.news-item:hover{
+box-shadow:0 0 30px rgba(0,191,255,.25);
+}
+
+/* TABLET */
+
+@media(min-width:768px){
+
+body{
+font-size:16px;
+}
+
+.live-data{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+overflow:visible;
+}
+
+.services{
+grid-template-columns:repeat(4,1fr);
+}
+
+#news-list{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+}
+
+/* MASAÜSTÜ */
+
+@media(min-width:1200px){
+
+body{
+max-width:1400px;
+margin:auto;
+}
+
+.topbar{
+padding:18px 30px;
+}
+
+.logo{
+font-size:42px;
+}
+
+.live-data{
+grid-template-columns:repeat(4,1fr);
+}
+
+#news-list{
+grid-template-columns:repeat(3,1fr);
+}
+
+.services{
+grid-template-columns:repeat(4,1fr);
+}
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:8px;
+height:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#00bfff;
+border-radius:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#111827;
+   }
