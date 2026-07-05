@@ -377,29 +377,37 @@ color:#cfcfcf;
 
 /* LIVE */
 
-.live-data{
+..live-data{
+display:flex;
+overflow-x:auto;
+gap:14px;
+padding:15px;
+scroll-snap-type:x mandatory;
+-webkit-overflow-scrolling:touch;
+}
 
-display:grid;
-grid-template-columns:1fr;
-gap:18px;
-padding:20px;
-
+.live-data::-webkit-scrollbar{
+display:none;
 }
 
 .live-box{
-
+min-width:170px;
+height:150px;
 background:#1b2644;
-padding:24px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.35);
-
+border-radius:18px;
+padding:18px;
+flex-shrink:0;
+scroll-snap-align:start;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+transition:.3s;
 }
 
-.live-box h3{
-
-font-size:28px;
-
+..live-box h3{
+font-size:20px;
+margin-bottom:10px;
 }
 
 .live-box p{
