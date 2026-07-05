@@ -5,7 +5,9 @@ const API_URL = "./data.json";
 // =======================
 
 async function loadData() {
+
     try {
+
         const response = await fetch(API_URL + "?t=" + Date.now());
 
         if (!response.ok) {
@@ -15,12 +17,17 @@ async function loadData() {
         const data = await response.json();
 
         function setValue(id, value, suffix = " ₺") {
+
             const el = document.getElementById(id);
+
             if (el && value !== undefined && value !== null) {
-                el.textContent = Number(value).toLocaleString("tr-TR") + suffix;
+                el.textContent =
+                    Number(value).toLocaleString("tr-TR") + suffix;
             }
+
         }
 
+        // Ana kartlar
         setValue("gold-price", data.gram);
         setValue("quarter-price", data.quarter);
         setValue("half-price", data.half);
@@ -29,9 +36,18 @@ async function loadData() {
         setValue("usd-price", data.usd);
         setValue("eur-price", data.eur);
 
+        // Bloomberg tarzı üst şerit
+        setValue("gold-price2", data.gram);
+        setValue("quarter-price2", data.quarter);
+        setValue("usd-price2", data.usd);
+        setValue("eur-price2", data.eur);
+
     } catch (err) {
+
         console.error("Finans Hatası:", err);
+
     }
+
 }
 
 // =======================
@@ -39,7 +55,9 @@ async function loadData() {
 // =======================
 
 async function loadWeather() {
+
     try {
+
         const response = await fetch(
             "https://api.open-meteo.com/v1/forecast?latitude=38.42&longitude=27.14&current=temperature_2m"
         );
@@ -47,13 +65,18 @@ async function loadWeather() {
         const weather = await response.json();
 
         const weatherEl = document.getElementById("weather");
+
         if (weatherEl) {
-            weatherEl.textContent = weather.current.temperature_2m + "°C";
+            weatherEl.textContent =
+                weather.current.temperature_2m + "°C";
         }
 
     } catch (err) {
+
         console.error("Hava Hatası:", err);
+
     }
+
 }
 
 // =======================
@@ -61,8 +84,11 @@ async function loadWeather() {
 // =======================
 
 async function loadNews() {
+
     try {
-        const response = await fetch("./news.json?t=" + Date.now());
+
+        const response =
+            await fetch("./news.json?t=" + Date.now());
 
         if (!response.ok) {
             throw new Error("news.json okunamadı");
@@ -70,7 +96,8 @@ async function loadNews() {
 
         const news = await response.json();
 
-        const container = document.getElementById("news-list");
+        const container =
+            document.getElementById("news-list");
 
         if (!container) return;
 
@@ -79,41 +106,15 @@ async function loadNews() {
         news.slice(0, 10).forEach((item, index) => {
 
             container.innerHTML += `
-                <div class="news-item">
 
-                    ${item.image ? `<img src="${item.image}" class="news-image">` : ""}
+            <div class="news-item">
 
-                    <h3>${item.title}</h3>
+                ${
+                    item.image
+                        ? `<img src="${item.image}" class="news-image">`
+                        : ""
+                }
 
-                    <p>${item.summary}</p>
+                <h3>${item.title}</h3>
 
-                    <div class="news-date">${item.published || ""}</div>
-
-                    <a class="news-button" href="haber.html?id=${index}">
-                        Haberi Oku →
-                    </a>
-
-                </div>
-            `;
-        });
-
-    } catch (err) {
-        console.error("Haber Hatası:", err);
-    }
-}
-
-// =======================
-// BAŞLAT
-// =======================
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    loadData();
-    loadWeather();
-    loadNews();
-
-    setInterval(loadData, 60000);
-    setInterval(loadWeather, 600000);
-    setInterval(loadNews, 600000);
-
-});
+                <p>${item.summary}</
