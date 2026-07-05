@@ -7,103 +7,194 @@
 
 <title>ANBEAN | Hayatın Nabzı</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<header>
+<!-- HEADER -->
+
+<header class="topbar">
+
+<div class="menu-btn">
+☰
+</div>
+
+<div class="brand">
 
 <div class="logo">
-<span class="logo-a">A</span>NBEAN
+ANBEAN
 </div>
 
 <div class="slogan">
 Hayatın Nabzı
 </div>
 
-<nav>
+</div>
 
-<a href="#">🏠 Ana Sayfa</a>
-<a href="#">📰 Haberler</a>
-<a href="#">💰 Altın</a>
-<a href="#">💵 Döviz</a>
-<a href="#">🌤 Hava</a>
-<a href="#">⚽ Spor</a>
-<a href="#">🙏 Namaz</a>
-
-</nav>
+<div class="search-icon">
+🔍
+</div>
 
 </header>
 
-<div class="search-box">
+<!-- KATEGORİLER -->
 
-<input type="text" placeholder="ANBEAN'de Ara...">
+<div class="categories">
 
-<button>Ara</button>
+<a href="#">📰 Gündem</a>
+
+<a href="#">💰 Ekonomi</a>
+
+<a href="#">⚽ Spor</a>
+
+<a href="#">🌍 Dünya</a>
+
+<a href="#">💻 Teknoloji</a>
+
+<a href="#">🕌 Namaz</a>
+
+<a href="#">🌦️ Hava</a>
+
+<a href="#">📢 Kamu</a>
 
 </div>
 
-<div class="ticker">
+<!-- MANŞET -->
 
-<marquee>
+<section class="headline">
 
-🔴 SON DAKİKA • Altın • Döviz • Haberler • Spor • Depremler • Kamu İlanları • Namaz Vakitleri
+<h2>🔴 SON DAKİKA</h2>
 
-</marquee>
+<div id="news-list">
+
+<div class="loading">
+
+Haberler yükleniyor...
 
 </div>
 
-<section class="hero">
+</div>
 
-<h1>Türkiye'nin Yeni Yaşam Portalı</h1>
+</section>
 
-<p>Altın, Döviz, Haber, Spor, Deprem ve çok daha fazlası.</p>
+<!-- CANLI PİYASA -->
+
+<section class="market-title">
+
+<h2>📈 Canlı Piyasalar</h2>
 
 </section>
 
 <section class="live-data">
 
 <div class="live-box gold">
+
 <h3>🥇 Gram Altın</h3>
-<p id="gold-price">Yükleniyor...</p>
-<span>Canlı Fiyat</span>
+
+<p id="gold-price">--</p>
+
 </div>
 
 <div class="live-box gold">
-<h3>🪙 Çeyrek Altın</h3>
-<p id="quarter-price">Yükleniyor...</p>
-<span>Canlı Fiyat</span>
+
+<h3>🪙 Çeyrek</h3>
+
+<p id="quarter-price">--</p>
+
 </div>
 
 <div class="live-box gold">
-<h3>🪙 Yarım Altın</h3>
-<p id="half-price">Yükleniyor...</p>
-<span>Canlı Fiyat</span>
+
+<h3>🪙 Yarım</h3>
+
+<p id="half-price">--</p>
+
 </div>
 
 <div class="live-box gold">
-<h3>👑 Tam Altın</h3>
-<p id="full-price">Yükleniyor...</p>
-<span>Canlı Fiyat</span>
-</div>
 
-<div class="live-box gold">
-<h3>🏆 Cumhuriyet Altını</h3>
-<p id="cumhuriyet-price">Yükleniyor...</p>
-<span>Canlı Fiyat</span>
+<h3>👑 Tam</h3>
+
+<p id="full-price">--</p>
+
 </div>
 
 <div class="live-box usd">
+
 <h3>💵 Dolar</h3>
-<p id="usd-price">Yükleniyor...</p>
-<span>USD / TRY</span>
+
+<p id="usd-price">--</p>
+
 </div>
 
 <div class="live-box eur">
+
 <h3>💶 Euro</h3>
+
+<p id="eur-price">--</p>
+
+</div>
+
+<div class="live-box weather">
+
+<h3>🌤️ Hava</h3>
+
+<p id="weather">--</p>
+
+</div>
+
+</section>
+
+<!-- SERVİSLER -->
+
+<section class="services">
+
+<div class="card">🌍 Depremler</div>
+
+<div class="card">📢 Kamu İlanları</div>
+
+<div class="card">⚽ Spor</div>
+
+<div class="card">🕌 Namaz</div>
+
+<div class="card">💰 Altın</div>
+
+<div class="card">💵 Döviz</div>
+
+<div class="card">💻 Teknoloji</div>
+
+<div class="card">🚗 Otomobil</div>
+
+</section>
+
+<!-- ALT MENÜ -->
+
+<nav class="bottom-nav">
+
+<a href="#">🏠<span>Ana Sayfa</span></a>
+
+<a href="#">📰<span>Haber</span></a>
+
+<a href="#">💰<span>Piyasa</span></a>
+
+<a href="#">🌍<span>Gündem</span></a>
+
+<a href="#">👤<span>Profil</span></a>
+
+</nav>
+
+<script src="script.js"></script>
+
+</body>
+
+</html><h3>💶 Euro</h3>
 <p id="eur-price">Yükleniyor...</p>
 <span>EUR / TRY</span>
 </div>
