@@ -8,32 +8,54 @@ async function loadData() {
 
         // Döviz
         document.getElementById("usd-price").textContent =
-            data.usd.toLocaleString("tr-TR") + " ₺";
+            Number(data.usd).toLocaleString("tr-TR") + " ₺";
 
         document.getElementById("eur-price").textContent =
-            data.eur.toLocaleString("tr-TR") + " ₺";
+            Number(data.eur).toLocaleString("tr-TR") + " ₺";
 
-        // Altınlar
+        // Altın
         document.getElementById("gold-price").textContent =
-            data.gram.toLocaleString("tr-TR") + " ₺";
+            Number(data.gram).toLocaleString("tr-TR") + " ₺";
 
         const quarter = document.getElementById("quarter-price");
         if (quarter)
-            quarter.textContent = data.quarter.toLocaleString("tr-TR") + " ₺";
+            quarter.textContent =
+                Number(data.quarter).toLocaleString("tr-TR") + " ₺";
 
         const half = document.getElementById("half-price");
         if (half)
-            half.textContent = data.half.toLocaleString("tr-TR") + " ₺";
+            half.textContent =
+                Number(data.half).toLocaleString("tr-TR") + " ₺";
 
         const full = document.getElementById("full-price");
         if (full)
-            full.textContent = data.full.toLocaleString("tr-TR") + " ₺";
+            full.textContent =
+                Number(data.full).toLocaleString("tr-TR") + " ₺";
 
         const cumhuriyet = document.getElementById("cumhuriyet-price");
         if (cumhuriyet)
-            cumhuriyet.textContent = data.cumhuriyet.toLocaleString("tr-TR") + " ₺";
+            cumhuriyet.textContent =
+                Number(data.cumhuriyet).toLocaleString("tr-TR") + " ₺";
 
-        // Hava Durumu
+    } catch (err) {
+        console.error("Altın/Döviz Hatası:", err);
+
+        [
+            "gold-price",
+            "quarter-price",
+            "half-price",
+            "full-price",
+            "cumhuriyet-price",
+            "usd-price",
+            "eur-price"
+        ].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = "--";
+        });
+    }
+
+    // Hava durumu ayrı çalışsın
+    try {
         const weatherResponse = await fetch(
             "https://api.open-meteo.com/v1/forecast?latitude=38.42&longitude=27.14&current=temperature_2m"
         );
@@ -44,23 +66,4 @@ async function loadData() {
             weather.current.temperature_2m + "°C";
 
     } catch (err) {
-        console.error(err);
-
-        [
-            "gold-price",
-            "quarter-price",
-            "half-price",
-            "full-price",
-            "cumhuriyet-price",
-            "usd-price",
-            "eur-price",
-            "weather"
-        ].forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.textContent = "--";
-        });
-    }
-}
-
-loadData();
-setInterval(loadData, 60000);
+        console.error("Hava Durumu Hatası:", err);
