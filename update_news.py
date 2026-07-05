@@ -1,5 +1,6 @@
 import requests
 import json
+from bs4 import BeautifulSoup
 
 url = "https://api.rss2json.com/v1/api.json?rss_url=https://www.aa.com.tr/tr/rss/default?cat=guncel"
 
@@ -9,11 +10,22 @@ try:
 
     news = []
 
-    for item in data["items"][:10]:
+    for item in data.get("items", [])[:10]:
+
+        summary = ""
+
+        if item.get("description"):
+            summary = BeautifulSoup(
+                item["description"],
+                "html.parser"
+            ).get_text()
+
         news.append({
-            "title": item["title"],
-            "link": item["link"],
-            "image": item.get("thumbnail", "")
+            "title": item.get("title", ""),
+            "summary": summary,
+            "link": item.get("link", ""),
+            "image": item.get("thumbnail", ""),
+            "published": item.get("pubDate", "")
         })
 
     with open("news.json", "w", encoding="utf-8") as f:
@@ -22,4 +34,4 @@ try:
     print("Haberler güncellendi.")
 
 except Exception as e:
-    print(e)
+    print("Hata:", e)
