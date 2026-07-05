@@ -2,18 +2,15 @@ const API_URL = "./data.json";
 
 async function loadData() {
     try {
-
         const response = await fetch(API_URL + "?t=" + Date.now());
         const data = await response.json();
 
-        // Döviz
         document.getElementById("usd-price").textContent =
             Number(data.usd).toLocaleString("tr-TR") + " ₺";
 
         document.getElementById("eur-price").textContent =
             Number(data.eur).toLocaleString("tr-TR") + " ₺";
 
-        // Altın
         document.getElementById("gold-price").textContent =
             Number(data.gram).toLocaleString("tr-TR") + " ₺";
 
@@ -39,22 +36,8 @@ async function loadData() {
 
     } catch (err) {
         console.error("Altın/Döviz Hatası:", err);
-
-        [
-            "gold-price",
-            "quarter-price",
-            "half-price",
-            "full-price",
-            "cumhuriyet-price",
-            "usd-price",
-            "eur-price"
-        ].forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.textContent = "--";
-        });
     }
 
-    // Hava Durumu
     try {
         const weatherResponse = await fetch(
             "https://api.open-meteo.com/v1/forecast?latitude=38.42&longitude=27.14&current=temperature_2m"
@@ -67,29 +50,42 @@ async function loadData() {
 
     } catch (err) {
         console.error("Hava Durumu Hatası:", err);
-
-        const weather = document.getElementById("weather");
-        if (weather) weather.textContent = "--";
     }
 }
 
 // Haberler
 async function loadNews() {
     try {
+
         const response = await fetch("./news.json?t=" + Date.now());
         const news = await response.json();
 
         const container = document.getElementById("news-list");
+
         if (!container) return;
 
         container.innerHTML = "";
 
-        news.slice(0, 10).forEach(item => {
+        news.slice(0, 10).forEach((item, index) => {
+
+            const image = item.image
+                ? `<img src="${item.image}" class="news-image" alt="${item.title}">`
+                : "";
+
             container.innerHTML += `
                 <div class="news-item">
+
+                    ${image}
+
                     <h3>${item.title}</h3>
+
                     <p>${item.summary}</p>
-                    <a href="${item.link}" target="_blank">Haberi Oku →</a>
+
+                    <a class="news-button"
+                       href="haber.html?id=${index}">
+                       Haberi Oku →
+                    </a>
+
                 </div>
             `;
         });
@@ -103,4 +99,4 @@ loadData();
 loadNews();
 
 setInterval(loadData, 60000);
-setInterval(loadNews, 600000);
+setInterval(loadNews, 600000);setInterval(loadNews, 600000);
