@@ -1,5 +1,47 @@
 [
   {
+    "title": "Hava sıcaklığının 40 derecenin üzerine çıktığı Yunanistan yangınla mücadele ediyor",
+    "summary": "Hava sıcaklığının 40 derecenin üzerine çıktığı Yunanistan yangınlarla mücadelesini sürdürüyor.",
+    "link": "https://www.aa.com.tr/tr/dunya/hava-sicakliginin-40-derecenin-uzerine-ciktigi-yunanistan-yanginla-mucadele-ediyor/4006053",
+    "image": "",
+    "published": "2026-07-22 15:10:10"
+  },
+  {
+    "title": "AMD, Anthropic'e 5 milyar dolara kadar yatırım taahhüdünde bulundu",
+    "summary": "Yarı iletken şirketi Advanced Micro Devices (AMD), yapay zeka şirketi Anthropic ile stratejik ortaklık yaptığını ve şirkete gelecekte 5 milyar dolara kadar stratejik yatırım yapma taahhüdünde bulunduğunu duyurdu.",
+    "link": "https://www.aa.com.tr/tr/bilim-teknoloji/amd-anthropice-5-milyar-dolara-kadar-yatirim-taahhudunde-bulundu/4006049",
+    "image": "",
+    "published": "2026-07-22 15:05:34"
+  },
+  {
+    "title": "Vakıf üniversitelerinde bu yıl öğrenim ücreti artışı yüzde 25'i aşamayacak",
+    "summary": "Vakıf yükseköğretim kurumlarında 2026-2027 eğitim-öğretim yılında hazırlık ve birinci sınıf dışındaki sınıflara uygulanacak öğrenim ücreti artışı yüzde 25'i geçemeyecek.",
+    "link": "https://www.aa.com.tr/tr/gundem/vakif-universitelerinde-bu-yil-ogrenim-ucreti-artisi-yuzde-25i-asamayacak/4006035",
+    "image": "",
+    "published": "2026-07-22 14:45:31"
+  },
+  {
+    "title": "Hollanda'nın, İsrail'in yasa dışı yerleşimlerinden gelen ürünlere getirdiği ihracat yasağı 22 Eylül'de başlıyor",
+    "summary": "Hollanda, İsrail'in işgal altındaki topraklarındaki yasa dışı yerleşim birimlerinden gelen ürünlerin ülkeye girişini 22 Eylül'den itibaren yasaklıyor.",
+    "link": "https://www.aa.com.tr/tr/dunya/hollandanin-israilin-yasa-disi-yerlesimlerinden-gelen-urunlere-getirdigi-ihracat-yasagi-22-eylulde-basliyor/4006023",
+    "image": "",
+    "published": "2026-07-22 14:28:37"
+  },
+  {
+    "title": "Trump, İran'ın saldırılarında ölen ABD askerlerini \"onurlandırmak\" için cenazelerinin getirileceği üsse gitti",
+    "summary": "ABD Başkanı Donald Trump, İran'ın saldırılarında hayatını kaybeden Amerikan askerlerinin cenazelerini karşılamak ve onları \"onurlandırmak\" istediğini söyledi.",
+    "link": "https://www.aa.com.tr/tr/dunya/trump-iranin-saldirilarinda-olen-abd-askerlerini-onurlandirmak-icin-cenazelerinin-getirilecegi-usse-gitti/4006012",
+    "image": "",
+    "published": "2026-07-22 14:20:26"
+  },
+  {
+    "title": "KKTC'de aşırı sıcaklardan dolayı, öğle saatlerinde güneş altında çalışma yasaklandı",
+    "summary": "Kuzey Kıbrıs Türk Cumhuriyeti'nde (KKTC), aşırı sıcaklardan dolayı 22 Temmuz'dan 1 Ağustos'a kadar öğle saatlerinde güneş altında çalışma yasaklandı.",
+    "link": "https://www.aa.com.tr/tr/dunya/kktcde-asiri-sicaklardan-dolayi-ogle-saatlerinde-gunes-altinda-calisma-yasaklandi/4006006",
+    "image": "",
+    "published": "2026-07-22 14:11:05"
+  },
+  {
     "title": "60 saniyede bugün (22 Temmuz 2026)",
     "summary": "Türkiye ve dünya gündeminin 60 saniyelik özeti. AJet'in katkılarıyla...",
     "link": "https://www.aa.com.tr/tr/gundem/60-saniyede-bugun-22-temmuz-2026/4005869",
@@ -14,13 +56,6 @@
     "published": "2026-07-22 12:44:53"
   },
   {
-    "title": "Fransa'da hazirandaki sıcak hava dalgasında ölenlerin sayısı geçmiş yılların ortalamalarına göre yüzde 36 arttı",
-    "summary": "Fransa kamu sağlığı kurumuna göre, ülkede haziranın son haftaları ile temmuzun ilk günlerinde etkili olan sıcak hava dalgasında ölenlerin sayısı geçmiş yılların ortalamalarına kıyasla yüzde 36 arttı.",
-    "link": "https://www.aa.com.tr/tr/dunya/fransada-hazirandaki-sicak-hava-dalgasinda-olenlerin-sayisi-gecmis-yillarin-ortalamalarina-gore-yuzde-36-artti/4005993",
-    "image": "",
-    "published": "2026-07-22 13:58:51"
-  },
-  {
     "title": "Milli Elektrikli Tren, Halkalı-Uzunköprü hattında hizmete başladı",
     "summary": "Milli Elektrikli Tren seti, Halkalı-Uzunköprü hattında hizmet vermeye başladı.",
     "link": "https://www.aa.com.tr/tr/gundem/milli-elektrikli-tren-halkali-uzunkopru-hattinda-hizmete-basladi/4005974",
@@ -28,45 +63,10 @@
     "published": "2026-07-22 13:48:46"
   },
   {
-    "title": "İspanya'da aşırı sıcaklar nedeniyle \"sıra dışı tehlike\" uyarısı yapıldı",
-    "summary": "İspanya'da etkili olan aşırı sıcaklar nedeniyle bazı bölgelerde \"sıra dışı tehlike\" uyarısı verildi.",
-    "link": "https://www.aa.com.tr/tr/dunya/ispanyada-asiri-sicaklar-nedeniyle-sira-disi-tehlike-uyarisi-yapildi/4005990",
+    "title": "İspanya ve Fransa'da sıcak hava dalgası",
+    "summary": "İspanya'da etkili olan aşırı sıcaklar nedeniyle bazı bölgelerde \"sıra dışı tehlike\" uyarısı verildi, Fransa'da da hazirandaki sıcak hava dalgasında ölenlerin sayısı geçmiş yılların ortalamalarına göre yüzde 36 arttı.",
+    "link": "https://www.aa.com.tr/tr/dunya/ispanya-ve-fransada-sicak-hava-dalgasi/4005990",
     "image": "",
     "published": "2026-07-22 13:54:23"
-  },
-  {
-    "title": "A Milli Kadın Basketbol Takımı'nın 2026 Dünya Kupası aday kadrosu açıklandı",
-    "summary": "FIBA 2026 Dünya Kupası'nda mücadele edecek A Milli Kadın Basketbol Takımı'nın aday kadrosu belli oldu.",
-    "link": "https://www.aa.com.tr/tr/spor/a-milli-kadin-basketbol-takiminin-2026-dunya-kupasi-aday-kadrosu-aciklandi/4005977",
-    "image": "",
-    "published": "2026-07-22 13:49:35"
-  },
-  {
-    "title": "Mısır'da tur otobüsü kazasında 26 Türk vatandaşı yaralandı",
-    "summary": "Mısır’ın başkenti Kahire’ye yaklaşık 205 kilometre uzaklıktaki Ras Sadr bölgesinde Türk ve Azerbaycanlı turistleri taşıyan tur otobüsünün kamyona çarpması sonucu meydana gelen kazada 26 Türk vatandaşı yaralandı.",
-    "link": "https://www.aa.com.tr/tr/dunya/misirda-tur-otobusu-kazasinda-26-turk-vatandasi-yaralandi/4005953",
-    "image": "",
-    "published": "2026-07-22 13:38:31"
-  },
-  {
-    "title": "AB, İngiltere'nin Ukrayna'ya yönelik 90 milyar avroluk kredi programına katılımını onayladı",
-    "summary": "Avrupa Birliği (AB) üyeleri, Ukrayna'nın 2026 ve 2027 yıllarındaki acil savunma ihtiyaçlarının karşılanmasına yönelik 90 milyar avroluk kredi programına İngiltere'nin katılmasına onay verdi.",
-    "link": "https://www.aa.com.tr/tr/dunya/ab-ingilterenin-ukraynaya-yonelik-90-milyar-avroluk-kredi-programina-katilimini-onayladi/4005956",
-    "image": "",
-    "published": "2026-07-22 13:39:17"
-  },
-  {
-    "title": "TBMM Başkanı Kurtulmuş: (Terörsüz Türkiye) Ümit ve arzu ederiz ki Meclis tatile girmeden yasalaşmış olur",
-    "summary": "TBMM Başkanı Kurtulmuş, Terörsüz Türkiye sürecine ilişkin, \"Ümit ve arzu ederiz ki Meclis tatile girmeden yasalaşmış olur ve Türkiye için yeni bir dönemin kapılarını ardına kadar açar.” dedi.",
-    "link": "https://www.aa.com.tr/tr/gundem/tbmm-baskani-kurtulmus-terorsuz-turkiye-umit-ve-arzu-ederiz-ki-meclis-tatile-girmeden-yasalasmis-olur-/4005926",
-    "image": "",
-    "published": "2026-07-22 13:24:35"
-  },
-  {
-    "title": "Kadir Sağlam, UEFA Konferans Ligi'ndeki Rakow-Valletta maçını yönetecek",
-    "summary": "UEFA Konferans Ligi'nde Polonya ekibi Rakow ile Malta temsilcisi Valletta arasında yarın oynanacak 2. eleme turu ilk maçını hakem Kadir Sağlam yönetecek.",
-    "link": "https://www.aa.com.tr/tr/spor/kadir-saglam-uefa-konferans-ligindeki-rakow-valletta-macini-yonetecek/4005914",
-    "image": "",
-    "published": "2026-07-22 13:15:23"
   }
 ]
